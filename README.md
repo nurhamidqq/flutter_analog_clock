@@ -6,7 +6,7 @@ Add package to `pubspec.yaml`
 analog_clock:
   git:
     url: https://github.com/nurhamidqq/flutter_analog_clock.git
-    ref: main
+    ref: master
 ```
 
 ## How to use
