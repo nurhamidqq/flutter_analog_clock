@@ -201,8 +201,8 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
                 widget.controller.value.month,
                 widget.controller.value.day,
                 widget.controller.value.hour,
+                widget.controller.value.minute,
                 second,
-                0,
               );
               if (widget.onClockChange != null) {
                 widget.onClockChange!(widget.controller.value);
