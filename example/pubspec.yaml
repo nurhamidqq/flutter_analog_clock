@@ -46,7 +46,7 @@ dev_dependencies:
   analog_clock:
     git:
       url: https://github.com/nurhamidqq/flutter_analog_clock.git
-      ref: main
+      ref: master
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
