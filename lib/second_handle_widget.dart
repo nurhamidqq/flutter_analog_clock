@@ -86,13 +86,13 @@ class SecondHandleWidget extends StatelessWidget {
             controller
                 .animateTo(angle2, duration: const Duration(milliseconds: 100))
                 .whenComplete(() {
-              onDragHandleEnd(((controller.value)).toInt());
+              onDragHandleEnd(((controller.value / 360) * 60).toInt());
             });
           } else {
             controller
                 .animateTo(angle1, duration: const Duration(milliseconds: 100))
                 .whenComplete(() {
-              onDragHandleEnd(((controller.value)).toInt());
+              onDragHandleEnd(((controller.value / 360) * 60).toInt());
             });
           }
 
