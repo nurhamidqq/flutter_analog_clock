@@ -1,4 +1,4 @@
-import 'package:analog_clock_/analog_clock.dart';
+import 'package:analog_clock/analog_clock.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             AnalogClockPicker(
               clockBackground: Image.asset(
-                "assets/images/clock_background.png",
+                "assets/images/background.png",
               ),
               clockBackgroundColor: Colors.white,
               secondHandleColor: Colors.red,

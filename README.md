@@ -1,39 +1,56 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add package to `pubspec.yaml`
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+analog_clock:
+  git:
+    url: https://github.com/nurhamidqq/flutter_analog_clock.git
+    ref: main
 ```
 
-## Additional information
+## How to use
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Create controller for control the value of the clock
+
+```dart
+AnalogClockController analogClockController = AnalogClockController();
+```
+
+You can provide default value inside the controller
+
+```dart
+AnalogClockController analogClockController = AnalogClockController(
+  value: DateTime.now(),
+  periodType: PeriodType.am,
+  onPeriodTypeChange: (date, period) {
+    //TODO : Do Something
+  },
+);
+```
+
+you can set period change listener after initialize it
+
+```dart
+analogClockController.setOnPeriodTypeChangeListener((date, period) {
+      //TODO : Do Something
+});
+```
+
+Minimal usage
+
+```dart
+AnalogClockPicker(
+  controller: analogClockController,
+  size: MediaQuery.of(context).size.width * 0.74,
+  secondHandleColor: Colors.red,
+  minutesHandleColor: Colors.black,
+  hourHandleColor: Colors.black,
+  clockBackground: Image.asset(
+    AssetImages.clockBackground,
+  ),
+  onClockChange: (date){
+    //TODO : Do Something
+  },
+)
+```
