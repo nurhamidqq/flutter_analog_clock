@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Analog Clock',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Analog clock picker",
+          "Flutter Analog Clock",
         ),
       ),
       body: SizedBox(
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         margin: const EdgeInsets.only(right: 12),
                         child: Text(
-                          DateFormat("HH:mm").format(value),
+                          DateFormat("HH:mm:ss").format(value),
                           style: const TextStyle(
                             fontSize: 40,
                             color: Colors.black,

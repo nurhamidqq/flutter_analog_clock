@@ -114,6 +114,7 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
 
   late AnimationController hourAngle;
   late AnimationController minutesAngle;
+  late AnimationController secondsAngle;
   Offset? centerPosition;
   double radius = 0;
   RenderBox? box;
@@ -187,6 +188,22 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
           SecondHandleWidget(
             handleHeight: radius * 0.68,
             handleColor: widget.secondHandleColor,
+            controller: secondsAngle,
+            onDragHandleEnd: (second) {
+              widget.controller.value = DateTime(
+                widget.controller.value.year,
+                widget.controller.value.month,
+                widget.controller.value.day,
+                widget.controller.value.hour,
+                second,
+                0,
+              );
+              if (widget.onClockChange != null) {
+                widget.onClockChange!(widget.controller.value);
+              }
+            },
+            centerPosition: centerPosition ?? Offset.zero,
+            radius: radius,
             handleWidget: widget.secondHandleWidget,
           ),
           HourHandleWidget(
