@@ -146,7 +146,7 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
       hourAngle.value = widget.controller.value.hour * 30;
     }
     minutesAngle.value = widget.controller.value.minute * 6;
-    secondsAngle.value = widget.controller.value.second * 1;
+    secondsAngle.value = widget.controller.value.second * 60;
 
     radius = widget.size / 2;
 
