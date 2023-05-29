@@ -53,7 +53,7 @@ class AnalogClockController extends ValueNotifier<DateTime> {
           ? (value.hour > 12 ? value.hour - 12 : value.hour)
           : (value.hour > 12 ? value.hour : value.hour + 12),
       value.minute,
-      0,
+      value.second,
     );
     value = newDate;
     if (onPeriodTypeChange != null) onPeriodTypeChange!(newDate, periodType);
