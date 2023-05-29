@@ -135,12 +135,18 @@ class _AnalogClockPickerState extends State<AnalogClockPicker>
       lowerBound: 0,
       upperBound: 360,
     );
+    secondsAngle = AnimationController(
+      vsync: this,
+      lowerBound: 0,
+      upperBound: 360,
+    );
     if (widget.controller.value.hour > 12) {
       hourAngle.value = (widget.controller.value.hour - 12) * 30;
     } else {
       hourAngle.value = widget.controller.value.hour * 30;
     }
     minutesAngle.value = widget.controller.value.minute * 6;
+    secondsAngle.value = widget.controller.value.second * 1;
 
     radius = widget.size / 2;
 
